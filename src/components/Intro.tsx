@@ -19,7 +19,7 @@ const Intro = () => {
         start: "top",
         end: "+=300px",
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -43,7 +43,7 @@ const Intro = () => {
     >
       {/* Background image */}
       <Image
-        src="/images/qq.jpg" // Wrong src intentional
+        src="/images/qq.jpg"
         alt="background image"
         fill
         priority
@@ -51,7 +51,7 @@ const Intro = () => {
       />
 
       {/* Overlay for visibility */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* <div className="absolute inset-0 bg-black/40" /> */}
 
       {/* Content */}
       <div className="absolute -mt-30 inset-0 flex flex-col items-center justify-center text-center z-10">

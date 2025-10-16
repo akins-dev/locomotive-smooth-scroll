@@ -1,24 +1,44 @@
+"use client";
+
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLayoutEffect, useRef, useState } from "react";
 
 const Projects = () => {
+  const [projectImage, setSeletedProjectImage] = useState(0);
+  const imageContainer = useRef(null);
+
   const objects = [
     {
       title: "Montaña Sagrada",
-      src: "/images/montana.jpg",
+      src: "/images/1.jpeg",
     },
     {
       title: "Ciudad Perdida",
-      src: "/images/ciudad.jpg",
+      src: "/images/2.jpeg",
     },
     {
       title: "Mar Infinito",
-      src: "/images/mar.jpg",
+      src: "/images/3.jpeg",
     },
     {
       title: "Bosque Encantado",
-      src: "/images/bosque.jpg",
+      src: "/images/4.jpeg",
     },
   ];
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      trigger: imageContainer.current,
+      start: "-=100px",
+      end: "400px",
+      pin: true,
+    //   markers: true,
+    });
+  }, []);
+
   return (
     // projects
     <div className="flex flex-col mt-[25vh] text-white p-[10%] leading-none">
@@ -27,7 +47,8 @@ const Projects = () => {
         {/* image container */}
         <div className="relative h-[60vh] w-[30%]">
           <Image
-            src="/images/2.jpeg"
+            ref={imageContainer}
+            src={objects[projectImage].src}
             alt="project"
             fill
             className="object-cover"
@@ -50,6 +71,19 @@ const Projects = () => {
             waiting to awaken.
           </p>
         </div>
+      </div>
+      {/* projects list */}
+      <div className="flex flex-col mt-[20px]">
+        {objects.map((object, index) => (
+          // project element
+          <div
+            key={index}
+            onMouseOver={() => setSeletedProjectImage(index)}
+            className="flex justify-end border-t-[1px] last-of-type:border-b-[1px] text-[4vw] uppercase font-[700] hover:cursor-pointer"
+          >
+            <p className="m-0 mt-[40px] mb-[20px]">{object.title}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
