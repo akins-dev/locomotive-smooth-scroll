@@ -1,16 +1,46 @@
 "use client";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 const Intro = () => {
-    // useLayout to ensure that DOM is fully loaded before initializing any scroll-related effects
-  useLayoutEffect(() => {
+  const backgroundImage = useRef(null);
+  const introImage = useRef(null);
 
+  // useLayout to ensure that DOM is fully loaded before initializing any scroll-related effects
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: document.documentElement,
+        start: "top",
+        end: "+=500px",
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    timeline
+      .from(backgroundImage.current, {
+        clipPath: "inset(15%)",
+      })
+      .to(
+        introImage.current,
+        {
+          height: "200px",
+        },
+        0
+      );
   }, []);
 
   return (
-    <section className="relative h-[140vh] w-full overflow-hidden">
+    <section
+      ref={backgroundImage}
+      className="relative h-[140vh] w-full overflow-hidden"
+    >
       {/* Background image */}
       <Image
         src="/images/cave.jpg"
@@ -27,15 +57,16 @@ const Intro = () => {
       <div className="absolute -mt-30 inset-0 flex flex-col items-center justify-center text-center z-10">
         {/* Intro image */}
         <div
+          ref={introImage}
           data-scroll
-          data-scroll-speed="0.3"
+          data-scroll-speed="0.4"
           className="relative w-[350px] h-[405px]"
         >
           <Image
             src="/images/download.jpg"
             alt="intro image"
             fill
-            className="object-cover rounded-2xl shadow-lg"
+            className="object-cover object-top shadow-lg"
           />
         </div>
 
