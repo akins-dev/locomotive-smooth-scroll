@@ -2,6 +2,7 @@
 
 import Description from "@/components/Description";
 import Intro from "@/components/Intro";
+import Projects from "@/components/Projects";
 import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useRef } from "react";
 
@@ -32,6 +33,7 @@ export default function Home() {
     >
       <Intro />
       <Description />
+      <Projects />
     </main>
   );
 }
