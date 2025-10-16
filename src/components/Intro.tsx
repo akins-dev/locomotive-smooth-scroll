@@ -2,8 +2,8 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
+import Image from "next/image";
 
 const Intro = () => {
   const backgroundImage = useRef(null);
@@ -17,7 +17,7 @@ const Intro = () => {
       scrollTrigger: {
         trigger: document.documentElement,
         start: "top",
-        end: "+=500px",
+        end: "+=300px",
         scrub: true,
         markers: true,
       },
@@ -39,11 +39,11 @@ const Intro = () => {
   return (
     <section
       ref={backgroundImage}
-      className="relative h-[140vh] w-full overflow-hidden"
+      className="relative h-[140vh] w-full"
     >
       {/* Background image */}
       <Image
-        src="/images/cave.jpg"
+        src="/images/qq.jpg" // Wrong src intentional
         alt="background image"
         fill
         priority
@@ -63,7 +63,7 @@ const Intro = () => {
           className="relative w-[350px] h-[405px]"
         >
           <Image
-            src="/images/download.jpg"
+            src="/images/ww.jpeg"
             alt="intro image"
             fill
             className="object-cover object-top shadow-lg"

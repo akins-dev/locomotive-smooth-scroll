@@ -1,5 +1,6 @@
 "use client"
 
+import Description from "@/components/Description";
 import Intro from "@/components/Intro";
 import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useRef } from "react";
@@ -25,11 +26,12 @@ export default function Home() {
 
   return (
     <main
-      data-scroll-container
-      ref={scrollRef}
+      data-scroll-container // for overall smooth scroll
+      ref={scrollRef} // for overall smooth scroll
       className="flex flex-col gap-[20px]"
     >
       <Intro />
+      <Description />
     </main>
   );
 }
