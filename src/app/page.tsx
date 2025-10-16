@@ -1,5 +1,6 @@
 "use client"
 
+import Intro from "@/components/Intro";
 import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useRef } from "react";
 
@@ -28,14 +29,7 @@ export default function Home() {
       ref={scrollRef}
       className="flex flex-col gap-[20px]"
     >
-      <div className="min-h-screen bg-rose-500"></div>
-      <div className="min-h-screen bg-rose-500"></div>
-      <div className="min-h-screen bg-rose-500"></div>
-      <div className="min-h-screen bg-rose-500"></div>
-      <div className="min-h-screen bg-rose-500"></div>
-      <div className="min-h-screen bg-rose-500"></div>
-      <div className="min-h-screen bg-rose-500"></div>
-      <div className="min-h-screen bg-rose-500"></div>
+      <Intro />
     </main>
   );
 }
