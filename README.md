@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Locomotive Scroll Next.js Demo
+
+A Next.js demo project showcasing smooth scrolling effects using [Locomotive Scroll](https://github.com/locomotivemtl/locomotive-scroll), GSAP animations, and Tailwind CSS.
+
+## Demo Video
+
+Watch the demo below:
+
+<p align="center">
+  <img src="./public/videos/demo.gif" width="600" alt="App demo" />
+</p>
+
+> If the video does not play, open [public/videos/demo.gif](public/videos/demo.gif) directly.
+
+## Features
+
+- **Locomotive Scroll** for smooth, hardware-accelerated scrolling
+- **GSAP** for scroll-triggered animations
+- **Tailwind CSS** for rapid UI styling
+- Responsive layout and image transitions
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```sh
+   bun install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Run the development server:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```sh
+   bun run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Open localhost in your browser.
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/` — Next.js app directory
+- `src/components/` — UI components (`Intro`, `Description`, `Projects`)
+- `public/images/` — Demo images
+- `public/videos/` — Demo video
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev` — Start development server
+- `npm run build` — Build for production
+- `npm run start` — Start production server
+- `npm run lint` — Lint code
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
