@@ -79,7 +79,7 @@ const Projects = () => {
           <div
             key={index}
             onMouseOver={() => setSeletedProjectImage(index)}
-            className="flex justify-end border-t-[1px] last-of-type:border-b-[1px] text-[4vw] uppercase font-[700] hover:cursor-pointer"
+            className="flex justify-end border-t-[1px] last-of-type:border-b-[1px] text-[4vw] uppercase font-[700]"
           >
             <p className="m-0 mt-[40px] mb-[20px]">{object.title}</p>
           </div>
